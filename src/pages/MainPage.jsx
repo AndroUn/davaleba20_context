@@ -1,8 +1,31 @@
+import useFetch from '../hooks/useFetch';
 import TodoTask from '../component/TodoTask';
-import { useTaskContext } from '../contexts/taskContext';
+import useRequest from '../hooks/useRequest';
+
 
 const MainPage = () => {
-    const {dataLoading, deleteLoading, updateLoading, error, taskList, onDelete, onFinish} = useTaskContext()
+    const {response, error, loading:dataLoading, resendRequest} = useFetch({url:'/api/v1/taskList', method: 'GET' })
+    const [sendFirstRequest, deleteLoading ] = useRequest({method: 'DELETE'})
+    const [sendSecondRequest, updateLoading] = useRequest({method: 'PUT'})
+    const taskList = response?.items.map(tasks => {
+        return {
+          title: tasks.title,
+          name: tasks.name,
+          deadline: tasks.deadline,
+          isCompleted: tasks.isCompleted,
+          id: tasks._uuid
+        }
+    }) || []
+
+
+    const onDelete = (taskId) => {
+      sendFirstRequest(null, `/api/v1/taskList/${taskId}`).then(() => resendRequest())
+    }
+
+    const onFinish = (isCompleted, taskId) => {
+      sendSecondRequest({isCompleted : !isCompleted}, `/api/v1/taskList/${taskId}`).then(() => resendRequest())
+    }
+
 
 
     if(dataLoading | deleteLoading | updateLoading) return <div className="lds-dual-ring"></div>

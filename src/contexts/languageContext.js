@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useMemo } from "react"
+import { createContext, useContext, useState } from "react"
 
 export const languageDictionary = {
     en : {
@@ -11,7 +11,8 @@ export const languageDictionary = {
            submit: 'submit',
            mainPage: 'Main Page',
            createPage: 'Create Page',
-           donePage: 'Done tasks'
+           donePage: 'Done tasks',
+           notFinished: 'is not Done'
 
         },
 
@@ -25,7 +26,8 @@ export const languageDictionary = {
             submit: 'შექმნა',
             mainPage: 'მთავარი გვერდი',
             createPage: 'ახალი ტასკის შექმნა',
-            donePage: 'დასრულებული ტასკები'
+            donePage: 'დასრულებული ტასკები',
+            notFinished: 'შესასრულებელი'
 
     }
 }
@@ -39,10 +41,10 @@ const LanguageContextProvider = ({children}) => {
     const [language, setLanguage] = useState(true)
 
 
-    const contextValue = useMemo(()=> ({
+    const contextValue = ({
         language: language ? 'en' : 'ka',
         toggleLanguage: ()=> setLanguage((prev) => !prev)
-    }))
+    })
 
     return <LanguageContext.Provider value={contextValue}>
         {children}

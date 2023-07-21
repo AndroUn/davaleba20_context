@@ -3,7 +3,6 @@ import CreatePage from "../pages/createPage"
 import LinkLayout from "../Layout/LinkLayout"
 import UpdatePage from "../pages/UpdatePage"
 import DonePage from "../pages/donePage"
-import TaskContextProvider from "../contexts/taskContext"
 import LanguageContextProvider from "../contexts/languageContext"
 
 const routes = [
@@ -16,13 +15,7 @@ const routes = [
         path: "/",
         children: [
             {
-                element: (
-                    <div>
-                        <TaskContextProvider>
-                            <MainPage />
-                        </TaskContextProvider>
-                    </div>
-                ),
+                element: <MainPage />,
                 index: true,
             },
             {
@@ -30,21 +23,18 @@ const routes = [
                 path: '/create',
             },
             {
-                element: (
-                    <div>
-                        <TaskContextProvider>
-                            <DonePage />
-                        </TaskContextProvider>
-                    </div>
-                ),
+                element: <DonePage />,
                 path: '/done',
             },
         ]},
         {
-            element: <UpdatePage />,
+            element: ( <div>
+                <LanguageContextProvider>
+                    <UpdatePage />
+                </LanguageContextProvider>
+            </div>),
             path: '/update/:taskId',
         }
-
 ]
 
 
