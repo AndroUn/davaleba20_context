@@ -1,0 +1,112 @@
+.toDoForm{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    margin-top: 50px;
+    flex-direction: column;
+    width: 350px;
+}
+
+.formBtn{
+    border: none;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .5s all;
+}
+.formBtn:hover{
+    background-color: #00d4ff;
+}
+
+.formInput{
+    border: 1px solid grey;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.getBtn{
+    width: 350px;
+    border: none;
+    margin: 10px auto;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .5s all;
+}
+.getBtn:hover{
+    background-color: #00d4ff;
+}
+
+
+
+.taskP{
+    width: 350px;
+    font-size: 17px;
+    color: black;
+}
+
+.buttonWrapper{
+    display: flex;
+    flex-direction: column;
+}
+.editBtn{
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #00d4ff;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    transition: .5s all;
+}
+
+.editBtn:hover{
+    background-color: #7783c9;
+    color:white;
+}
+
+
+.taskBox{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    border: 1px solid red;
+    border-left: 4px solid red;
+    border-radius: 4px;
+    width: 500px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.menu_item{
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.languages{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 5px;
+    border: 1px solid grey;
+}
+
+.language option{
+    padding: 5px;
+}
+
