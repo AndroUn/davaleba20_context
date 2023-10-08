@@ -55,6 +55,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .editBtn{
     border: none;
     border-radius: 5px;
@@ -110,3 +111,64 @@
     padding: 5px;
 }
 
+
+
+@media (max-width: 650px){
+    .taskBox{
+        width: 350px;
+        padding: 10px;
+    }
+
+    .menu{
+        margin: 20px;
+    }
+
+    .menu_item{
+        font-size: 15px;
+    }
+
+    .taskP{
+        width: 250px;
+        font-size: 14px;
+    }
+
+    .editBtn{
+        font-size: 14px;
+        padding: 5px 10px;
+        
+    }
+}
+
+
+
+@media (max-width: 500px){
+    .menu_item{
+        font-size: 12px;
+    }
+    .taskBox{
+        width: 300px;
+        padding: 10px;
+    }
+
+    .taskP{
+        width: 200px;
+        font-size: 14px;
+    }
+
+}
+
+
+@media (max-width: 400px){
+    .toDoForm{
+        width: 300px;
+    }
+
+}
+
+
+@media (max-width: 300px){
+    .toDoForm{
+        width: 200px;
+    }
+
+}
